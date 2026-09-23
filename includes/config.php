@@ -10,10 +10,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-define('DB_HOST', getenv('MYSQLHOST'));
-define('DB_NAME', getenv('MYSQLDATABASE'));
-define('DB_USER', getenv('MYSQLUSER'));
-define('DB_PASS', getenv('MYSQLPASSWORD'));
+define('DB_HOST', $_ENV['MYSQLHOST'] ?? getenv('MYSQLHOST'));
+define('DB_NAME', $_ENV['MYSQLDATABASE'] ?? getenv('MYSQLDATABASE'));
+define('DB_USER', $_ENV['MYSQLUSER'] ?? getenv('MYSQLUSER'));
+define('DB_PASS', $_ENV['MYSQLPASSWORD'] ?? getenv('MYSQLPASSWORD'));
 define('DB_CHARSET', 'utf8mb4');
 // Store Constants
 define('SITE_NAME', 'MANON | منون');
