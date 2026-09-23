@@ -10,13 +10,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Database Credentials
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'manon_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', getenv('MYSQLHOST'));
+define('DB_NAME', getenv('MYSQLDATABASE'));
+define('DB_USER', getenv('MYSQLUSER'));
+define('DB_PASS', getenv('MYSQLPASSWORD'));
 define('DB_CHARSET', 'utf8mb4');
-
 // Store Constants
 define('SITE_NAME', 'MANON | منون');
 define('SITE_SLOGAN', 'عبايتك فخامة تليق بك');
